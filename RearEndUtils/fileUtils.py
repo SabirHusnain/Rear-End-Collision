@@ -431,6 +431,15 @@ def filterData(
 
 
 def getSensorData(filePath):
+    """
+    Read sensor data from file
+
+    Args:
+        filePath (str): File path to be read
+    Returns:
+        x_values (list): x-axis data from file
+        y_values (list): y-axis data from file
+    """
     with open(filePath, "r") as file:
         x_values = []
         y_values = []
@@ -447,6 +456,9 @@ def getSensorData(filePath):
 
 
 def getArranged(ddata):
+    """
+    DEPRECATED
+    """
     models = []
     for itr, myDict in enumerate(ddata):
         temp = myDict["file"].split("_")

@@ -262,6 +262,20 @@ def calcFemurLoad(f, tol=10):
 
 
 def calcNkm(fx, my, t):
+    """
+    Calculate Neck Protection Criterion (Nkm)
+
+    Args:
+        fx   (np.array): Neck Force in x-axis {KN}
+        my   (np.array): Neck Moment in y-axis {g}
+
+    Returns:
+        nfa  (np.float): Nkm (Flexion-Positive)
+        nea  (np.float): Nkm (Extension-Positive)
+        nfp  (np.float): Nkm (Flexion-Negative)
+        nep  (np.float): Nkm (Extension-Negative)
+    """
+
     def Nkm(f, m, fint, mint, time):
         nkm = (f / fint) + (m / mint)
         # return integrate.trapezoid(nkm, time)
@@ -282,6 +296,16 @@ def calcNkm(fx, my, t):
 
 
 def plotRegression(x, y):
+    """
+    Plot regression line using linear regression
+
+    Args:
+        x  (np.array): x-axis data
+        y  (np.array): y-axis data
+    Returns:
+        m  (np.float): Regression line slope
+        c  (np.float): Regression line intercept
+    """
     regres = LinearRegression()
     imputer = SimpleImputer(missing_values=np.nan, strategy="mean")
     y_imputed = imputer.fit_transform(np.array(y).reshape(-1, 1))
@@ -301,6 +325,19 @@ def plotData(
     regColor="red",
     limColor="black",
 ):
+    """
+    Plot and save data in graphs
+
+    Args:
+        basePath  (str) : Base path of project
+        ddata     (dict): Data dictionary
+        name      (str) : Name for the results
+        regres    (bool): Regression line flag      [Optional]
+        lim       (bool): Limit line flag           [Optional]
+        pltType   (str) : Plot type (scatter, line) [Optional]
+        regColor  (str) : Regression line color     [Optional]
+    """
+
     year = []
     gsi_1 = []
     hic_1 = []
