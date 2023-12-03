@@ -147,7 +147,7 @@ def calc3ms(ax, ay, az, t, tol=60):
     Args:
         ax  (np.array): X-Component of acceleration at chest {g}
         ay  (np.array): Y-Component of acceleration at chest {g}
-        az  (np.array): Z-Component of acceleration at chest {g}chest
+        az  (np.array): Z-Component of acceleration at chest {g}
         t   (np.array): Time vector {s}
         tol (np.float): 3ms Tolerance {g}
 
@@ -193,8 +193,8 @@ def calcCTI(ms3, D, A_int=85, D_int=102):
     Args:
         ms3   (np.float): 3ms Value {g}
         D     (np.array): Chest deflection vector {mm}
-        A_int (np.float): Intercept value for the acceleration (85g Hybrid III 50th percentile dummy) [optional]
-        D_int (np.float): Intercept value for the deflection (102mm Hybrid III 50th percentile dummy) [optional]
+        A_int (np.float): Intercept value for the acceleration (85g for H3 50th percentile dummy) [optional]
+        D_int (np.float): Intercept value for the deflection (102mm for H3 50th percentile dummy) [optional]
 
     Returns:
         cti (np.float): CTI value
@@ -211,7 +211,7 @@ def calcCSI(ax, ay, az, t):
     Args:
         ax  (np.array): X-Component of acceleration at chest {g}
         ay  (np.array): Y-Component of acceleration at chest {g}
-        az  (np.array): Z-Component of acceleration at chest {g}chest
+        az  (np.array): Z-Component of acceleration at chest {g}
         t   (np.array): Time vector {s}
 
     Returns:
