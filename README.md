@@ -13,7 +13,7 @@ pip3 install virtualenv
 python3 -m venv env
 
 # Activate environment
-./env/Scripts\activate
+.\env\Scripts\activate
 
 # Install dependencies
 pip3 install -r requirements.txt
