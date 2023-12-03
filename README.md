@@ -1,12 +1,28 @@
 # Rear-end Collision Impact Analysis using Experimental Sensor Data
 
 ## How to use
+```pwsh
+# Clone remote repository
+git clone https://github.com/sabirhusnain577/Rear-End-Collision
 
-`git clone https://github.com/sabirhusnain577/Rear-End-Collision`
+# Open terminal in project directory
+cd Rear-End-Collision
 
-`python3 '.\Rear End Collision Analysis.py'`
+# Create virtual environment
+pip3 install virtualenv
+python3 -m venv env
 
-## Instructions to download data from NHTSA databse
+# Activate environment
+./env/Scripts\activate
+
+# Install dependencies
+pip3 install -r requirements.txt
+
+# Run python file
+python3 '.\Rear End Collision Analysis.py'
+```
+
+## Instructions to download data from NHTSA database
 
 - Visit web site [NHTSA Database](https://www.nhtsa.gov/research-data/research-testing-databases#/vehicle)
 - Use filter:
